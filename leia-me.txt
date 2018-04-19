@@ -1,0 +1,5 @@
+> instalar node versão v.8.10.0 ou superior
+> rodar comando npm install na pasta que contem o arquivo package.json
+> rodar comando ng serve -o
+> mpm install -g jason-server
+> json-server db.json
