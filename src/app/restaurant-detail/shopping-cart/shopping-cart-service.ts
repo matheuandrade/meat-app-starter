@@ -18,12 +18,24 @@ export class ShoppinCartService{
     let foundedItem = this.items.find((mItem) => mItem.menuItem.id == item.id)
 
     if(foundedItem){
-      foundedItem.quantity = foundedItem.quantity +1;
+      //foundedItem.quantity = foundedItem.quantity +1;
+      this.increaseQty(foundedItem)
     }else
     {
       this.items.push(new CartItem(item));
     }
 
+  }
+
+  increaseQty(item: CartItem){
+    item.quantity = item.quantity + 1
+  }
+
+  decreaseQty(item: CartItem){
+    item.quantity = item.quantity - 1
+    if(item.quantity == 0){
+      this.removeItem(item)
+    }
   }
 
   removeItem(item: CartItem){
